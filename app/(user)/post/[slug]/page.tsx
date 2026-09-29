@@ -15,24 +15,29 @@ import Link from "next/link";
 import { RichText } from "../../../../components/RichText";
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 export const revalidate = 30;
 
-export const generateStaticParams = async () => {
+export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
   const query = groq`*[_type == 'post']{
     slug
    }`;
   const slugs: Post[] = await client.fetch(query);
   const slugRoute = slugs.map((slug) => slug?.slug?.current);
-  return slugRoute?.map((slug) => ({
-    slug,
-  }));
+
+  return slugRoute
+    .filter((slug): slug is string => Boolean(slug))
+    .map((slug) => ({
+      slug,
+    }));
 };
 
-const SlugPage = async ({ params: { slug } }: Props) => {
+const SlugPage = async ({ params }: Props) => {
+  const { slug } = await params;
+
   const query = groq`*[_type == 'post' && slug.current == $slug][0]{
    ...,
    body,
@@ -44,22 +49,26 @@ const SlugPage = async ({ params: { slug } }: Props) => {
     <Container className="mb-10 pt-[30px]">
       <div className="flex items-center mb-10">
         <div className="w-full md:w-2/3">
-          <Image
-            src={urlFor(post?.mainImage).url()}
-            alt="post-image"
-            width={500}
-            height={500}
-            className="object-cover w-full"
-          />
+          {post?.mainImage && (
+            <Image
+              src={urlFor(post.mainImage).url()}
+              alt="post-image"
+              width={500}
+              height={500}
+              className="object-cover w-full"
+            />
+          )}
         </div>
         <div className="w-1/3 hidden md:inline-flex flex-col items-center gap-5 px-4">
-          <Image
-            src={urlFor(post?.author?.image).url()}
-            alt="author-image"
-            width={200}
-            height={200}
-            className="object-cover w-32 h-32 rounded-full object-top"
-          />
+          {post?.author?.image && (
+            <Image
+              src={urlFor(post.author.image).url()}
+              alt="author-image"
+              width={200}
+              height={200}
+              className="object-cover w-32 h-32 rounded-full object-top"
+            />
+          )}
           <p className="text-3xl text-[#5442ae] font-semibold">
             {post?.author?.name}
           </p>
