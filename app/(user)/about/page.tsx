@@ -168,12 +168,12 @@ export default function AboutPage() {
         <p className="text-gray-500 mb-8 max-w-xl mx-auto">
           Follow my journey and get inspired for your next adventure.
         </p>
-        <a
+        <Link
           href="/"
           className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-semibold duration-200 inline-block"
         >
           Read the Blog
-        </a>
+        </Link>
       </div>
     </div>
   );
