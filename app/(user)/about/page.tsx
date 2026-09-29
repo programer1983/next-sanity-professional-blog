@@ -3,6 +3,7 @@
 import Container from "./../../../components/Container";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import Link from "next/link";
 import {
   Camera,
   Globe,
