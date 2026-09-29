@@ -15,7 +15,7 @@ import { structure } from "./sanity/structure";
 import StudioNavbar from "./components/StudioNavbar";
 
 export default defineConfig({
-  basePath: "/studio",
+  basePath: "/studio-secret-983hfjksd92",
   projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schemaTypes' folder
