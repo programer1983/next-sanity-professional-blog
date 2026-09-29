@@ -21,7 +21,7 @@ interface Props {
 }
 export const revalidate = 30;
 
-export const generateStsticParams = async () => {
+export const generateStaticParams = async () => {
   const query = groq`*[_type == 'post']{
     slug
    }`;
