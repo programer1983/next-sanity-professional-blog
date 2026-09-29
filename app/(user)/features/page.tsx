@@ -1,5 +1,6 @@
 import Container from "./../../../components/Container";
 import { Camera, Globe, Pen, Star, Users, Zap } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
