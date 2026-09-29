@@ -136,11 +136,12 @@ export default function AboutPage() {
 
       <Container className="bg-white px-3 lg:px-20 py-16">
         <div className="max-w-3xl mx-auto text-center flex flex-col gap-6">
-          <h2 className="text-3xl font-bold">Hi, I'm John Dorian</h2>
+          <h2 className="text-3xl font-bold">Hi, I&apos;m Djon Dorian</h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            I've been traveling the world for over 10 years, capturing moments
-            through my lens and sharing stories from every corner of the globe.
-            This blog is my digital home — a place where adventure meets art.
+            I&apos;ve been traveling the world for over 10 years, capturing
+            moments through my lens and sharing stories from every corner of the
+            globe. This blog is my digital home — a place where adventure meets
+            art.
           </p>
           <p className="text-gray-500 text-lg leading-relaxed">
             From the mountains of Patagonia to the streets of Tokyo, I believe
@@ -163,7 +164,7 @@ export default function AboutPage() {
       </Container>
 
       <div className="bg-white py-16 px-4 text-center border-t border-gray-100">
-        <h2 className="text-3xl font-bold mb-4">Let's explore together</h2>
+        <h2 className="text-3xl font-bold mb-4">Let&apos;s explore together</h2>
         <p className="text-gray-500 mb-8 max-w-xl mx-auto">
           Follow my journey and get inspired for your next adventure.
         </p>
