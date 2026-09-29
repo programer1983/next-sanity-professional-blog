@@ -13,7 +13,7 @@ const Hero = () => {
         className="bg-black/30 absolute top-0 w-full h-full text-gray-100
       flex items-center justify-center flex-col"
       >
-        <h1 className="text-5xl md:text-[100px] lg:text-[150px] font-bold">
+        <h1 className="text-5xl md:text-[100px] lg:text-[120px] font-bold">
           John Dorian
         </h1>
         <p className="text-xl md:text-2xl lg:text-5xl font-semibold">
